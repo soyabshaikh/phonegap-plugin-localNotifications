@@ -63,7 +63,7 @@ static UILocalNotification *localNotification = nil;
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     
     // Release the notification
-    [localNotification release];
+   // [localNotification release];
 }
 
 #pragma - Instance Methods
@@ -168,7 +168,7 @@ static UILocalNotification *localNotification = nil;
     // now schedule new one
     NSLog(@"Notification Set: %@ (ID: %@, Badge: %i)", date , notificationId, badge);
     [[UIApplication sharedApplication] scheduleLocalNotification:notif];
-	[notif release];
+//	[notif release];
 
     CDVPluginResult *result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
     [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
@@ -201,7 +201,7 @@ static UILocalNotification *localNotification = nil;
     if (launchedWithNotification) {
         active = @"false";
         launchedWithNotification = NO;
-        [localNotification release];
+      //  [localNotification release];
         localNotification = nil;
     } else if ( [[UIApplication sharedApplication] applicationState] == UIApplicationStateActive ) {
         active = @"true";
@@ -227,14 +227,14 @@ static UILocalNotification *localNotification = nil;
 
         CDVInvokedUrlCommand *cmd = [[CDVInvokedUrlCommand alloc] initWithArguments:notificationArray callbackId:@"" className:@"LocalNotification" methodName:@"addNotification"];
         [_localNotification addNotification:cmd];
-        [cmd release];
-        [notificationArray release];
-        [notificationDict release];
+       // [cmd release];
+       // [notificationArray release];
+       // [notificationDict release];
     }
 
     // empty it
     [self.notificationQueue removeAllObjects];
-    [_localNotification release];
+   // [_localNotification release];
 }
 
 - (void)cancelNotification:(CDVInvokedUrlCommand *)command {
