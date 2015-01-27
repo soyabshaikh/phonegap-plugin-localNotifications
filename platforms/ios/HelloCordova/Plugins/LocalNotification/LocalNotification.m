@@ -52,7 +52,7 @@ static UILocalNotification *localNotification = nil;
     if (localNotif) {
         launchedWithNotification = YES;
         localNotification = localNotif;
-        [localNotification retain];
+        //[localNotification retain];
     } else {
         launchedWithNotification = NO;
     }
@@ -74,7 +74,7 @@ static UILocalNotification *localNotification = nil;
     // Stop the instance from observing all notification center notifications.
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     
-    [super dealloc];
+    //[super dealloc];
 }
 
 -(CDVPlugin *)initWithWebView:(UIWebView *)theWebView {
