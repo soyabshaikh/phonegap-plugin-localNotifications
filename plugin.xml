@@ -32,8 +32,8 @@
     </config-file>
     
     <config-file target="AndroidManifest.xml" parent="/manifest">
-    	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-    	<uses-permission android:name="android.permission.VIBRATE" />
+    	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" android:required="true" />
+    	<uses-permission android:name="android.permission.VIBRATE" android:required="true" />
     </config-file>   
     
     <config-file target="AndroidManifest.xml" parent="/manifest/application">
